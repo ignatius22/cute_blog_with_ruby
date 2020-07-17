@@ -1,0 +1,23 @@
+<div class="container  shadow-lg b-white p-3 rounded mt-3">
+	<div class="container  mt-3">
+	<div class="card shadow-sm">
+	<div class="card-body">
+		<h3 class="card-title"><%=@post.title %></h3>
+		<p class="card-text"><%=@post.body%></p>
+		<%=link_to 'Delete', post_path(@post), 
+		method: :delete,
+		data: {confirm: 'Are you sure?'},
+		:class => 'btn btn-danger'  %>
+		<%=link_to 'Edit', edit_post_path, :class => 'btn btn-secondary'  %>
+	</div>
+	<%= render 'comments/comments'%>
+</div>
+
+
+<%= render 'comments/form'%>
+
+</div>
+
+
+
+

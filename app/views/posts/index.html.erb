@@ -1,0 +1,14 @@
+<div class="container mt-2 shadow-sm bg-white p-3 mb-5">
+<h1 class="mb-3">Blog Posts</h1>
+<div class="container row ">	
+<%@posts.each do |post|  %>
+ <div class="card col-4-lg  col-md-6  col-sm-12 col-xl-4 mb-3 shadow bg-white p-3 border-0 mt-3">
+	<div class="card-body ">
+		<h3 class="card-title"><%=post.title%></h3>
+		<p class="card-text"><%=post.body%></p>
+		<%=link_to 'Read More', post_path(post), :class => 'btn btn-info'  %>
+	</div>
+ </div>
+<% end -%>
+	</div>
+</div>

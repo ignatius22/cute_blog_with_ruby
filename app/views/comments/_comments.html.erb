@@ -1,0 +1,21 @@
+<div class="container ml-3 ">
+	<h3 class="lead">comments</h3>
+<div class="container mt-3 row mb-2">
+<% @post.comments.each do |comment| %>
+<div class="card col-lg-6 col-xl-6 col-md-12 col-sm-12 col-xs-12 border-0 shadow">
+	<div class="card-body">
+		<h3 class="card-title lead"><%=comment.username%></h3>
+	<div class="d-flex justify-content-between">
+		<p class="card-text"><%=comment.body%></p>
+		<%=link_to '[x]', [comment.post, comment], 
+		method: :delete,
+		data: {confirm: 'Are you sure?'} %>
+	</div>
+		
+	</div>
+</div>
+	<% end -%>
+</div>
+</div>
+
+

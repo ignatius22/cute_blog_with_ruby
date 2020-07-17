@@ -1,0 +1,22 @@
+<div class="container w-50 mt-5 shadow bg-white p-3 rounded">
+<h1 class="lead">Add Post</h1>
+<%= form_for :post, url: posts_path  do  |f|  %>
+		<%if @post.errors.any?  %>
+		<%@post.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end -%>
+	<% end -%>
+  <p>
+	<%= f.label :title %> <br>
+	<%= f.text_field(:title, {:class => 'form-control shadow-sm'}) %>
+ </p>
+<p>
+	<%= f.label :body %> <br>
+	<%= f.text_area(:body,{:class => 'form-control shadow-sm'}) %>
+</p>
+<div class=" d-flex justify-content-between">
+	<%=link_to 'Back', home_path, :class => 'btn btn-primary shadow'  %>
+	<%=f.submit({:class => 'btn btn-primary  shadow-lg'})  %>
+</div>
+<% end %>
+</div>
